@@ -20,6 +20,7 @@ import {auth} from "./configs/firebase";
 import CreateResumePage from "./pages/CreateResumePage/CreateResumePage";
 import CreateWorkPage from "./pages/CreateWorkPage/CreateWorkPage";
 import ListWorksPage from "./pages/ListWorksPage/ListWorksPage";
+import TestPage from "./pages/TestPage";
 
 
 /*
@@ -50,46 +51,46 @@ WorkerProfile
 
 function App() {
 
-  // получим текущего юзера
-  const {currentUser} = useContext(AuthContext);
+    // получим текущего юзера
+    const {currentUser} = useContext(AuthContext);
 
-  return (
-    <div className="App">
-      <Header/>
-      <Content>
-        <ToastContainer position="top-center"/>
-        <Routes>
-          <Route path="/" element={<MainPage/>}/>
-          <Route path="/create/resume" element={<CreateResumePage/>}/>
-          <Route path="/create/work" element={<CreateWorkPage/>}/>
-          <Route path="/list/works" element={<ListWorksPage/>}/>
-
-
-
-            {/*<Route path="/list" element={<ListPage/>}/>*/}
-          {/*<Route path="/detail/:id" element={<DetailPage/>}/>*/}
-
-          {/*<Route path='/edit' element={*/}
-          {/*  isUserAdmin(auth?.currentUser?.uid) ? <EditPage /> : <NavigateError massage="Страница доступна только админу!" to="/" />*/}
-          {/*}*/}
-          {/*/>*/}
-
-          {/*<Route path='/private' element={*/}
-          {/*  currentUser ? <PrivatePage /> : <NavigateError massage="Страница доступна только вошедшим пользователям" to="/login" />*/}
-          {/*}*/}
-          {/*/>*/}
-
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
+    return (
+        <div className="App">
+            <Header/>
+            <Content>
+                <ToastContainer position="top-center"/>
+                <Routes>
+                    <Route path="/" element={<MainPage/>}/>
+                    <Route path="/create/resume" element={<CreateResumePage/>}/>
+                    <Route path="/create/work" element={<CreateWorkPage/>}/>
+                    <Route path="/list/works" element={<ListWorksPage/>}/>
+                    <Route path="/test" element={<TestPage/>}/>
 
 
-          <Route path="*" element={<NotFoundPage/>}/>
-        </Routes>
-      </Content>
-      <Footer/>
-    </div>
+                    {/*<Route path="/list" element={<ListPage/>}/>*/}
+                    {/*<Route path="/detail/:id" element={<DetailPage/>}/>*/}
 
-  )
+                    {/*<Route path='/edit' element={*/}
+                    {/*  isUserAdmin(auth?.currentUser?.uid) ? <EditPage /> : <NavigateError massage="Страница доступна только админу!" to="/" />*/}
+                    {/*}*/}
+                    {/*/>*/}
+
+                    {/*<Route path='/private' element={*/}
+                    {/*  currentUser ? <PrivatePage /> : <NavigateError massage="Страница доступна только вошедшим пользователям" to="/login" />*/}
+                    {/*}*/}
+                    {/*/>*/}
+
+                    <Route path='/login' element={<Login/>}/>
+                    <Route path='/register' element={<Register/>}/>
+
+
+                    <Route path="*" element={<NotFoundPage/>}/>
+                </Routes>
+            </Content>
+            <Footer/>
+        </div>
+
+    )
 }
 
 export default App;
