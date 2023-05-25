@@ -1,5 +1,5 @@
 body {
-    background: #000 url("background.jpg") fixed no-repeat;
+    background: #000 url("../images/background.jpg") fixed no-repeat;
     background-size: cover;
 }
 
