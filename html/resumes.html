@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Список резюме</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/list.css">
 </head>
 <body>
 
@@ -34,11 +34,115 @@
     </div>
 </header>
 
-<div class="container start-page">
-    <div class="card two-column-wide">
-        Список резюме...
+<div class="container-grid">
+    <div class="filter">
+        <form class="card">
+            <div class="filter-function">
+                <input type="text" name="job_name" placeholder="Должность">
+            </div>
+            <div class="filter-function">
+                <!--Результаты больше этой цифры не показываем-->
+                <input type="text" name="company" placeholder="Желаемая зарплата">
+            </div>
+            <div class="filter-function">
+                <input type="text" name="city" placeholder="Город">
+            </div>
+            <!--Сюда можно добавлять еще div'ы, если потребуется-->
+            <button class="usual-button" type="submit">Найти</button>
+        </form>
+    </div>
+    <div class="list">
+        <div class="card list-element">
+            <div class="one-line">
+                <h1 class="job-name">Java-разработчик</h1>
+                <!--Желаемая зарплата, если указано-->
+                <h2>Желаемая з/п: 70 000 руб.</h2>
+            </div>
+            <div class="one-line">
+                <div>
+                    <!--Имя, если указано-->
+                    <h3>Иван Иванович</h3>
+                    <!--Город, если указано-->
+                    <h3>Москва</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card list-element">
+            <div class="one-line">
+                <h1 class="job-name">Java-разработчик</h1>
+                <!--Желаемая зарплата, если указано-->
+                <h2>Желаемая з/п: 70 000 руб.</h2>
+            </div>
+            <div class="one-line">
+                <div>
+                    <!--Имя, если указано-->
+                    <h3>Иван Иванович</h3>
+                    <!--Город, если указано-->
+                    <h3>Москва</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card list-element">
+            <div class="one-line">
+                <h1 class="job-name">Java-разработчик</h1>
+                <!--Желаемая зарплата, если указано-->
+                <h2>Желаемая з/п: 70 000 руб.</h2>
+            </div>
+            <div class="one-line">
+                <div>
+                    <!--Имя, если указано-->
+                    <h3>Иван Иванович</h3>
+                    <!--Город, если указано-->
+                    <h3>Москва</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card list-element">
+            <div class="one-line">
+                <h1 class="job-name">Java-разработчик</h1>
+                <!--Желаемая зарплата, если указано-->
+                <h2>Желаемая з/п: 70 000 руб.</h2>
+            </div>
+            <div class="one-line">
+                <div>
+                    <!--Имя, если указано-->
+                    <h3>Иван Иванович</h3>
+                    <!--Город, если указано-->
+                    <h3>Москва</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card list-element">
+            <div class="one-line">
+                <h1 class="job-name">Java-разработчик</h1>
+                <!--Желаемая зарплата, если указано-->
+                <h2>Желаемая з/п: 70 000 руб.</h2>
+            </div>
+            <div class="one-line">
+                <div>
+                    <!--Имя, если указано-->
+                    <h3>Иван Иванович</h3>
+                    <!--Город, если указано-->
+                    <h3>Москва</h3>
+                </div>
+            </div>
+        </div>
+        <div class="paginator">
+            <!--Если есть страницы до нынешней-->
+            <a href="#">«</a>
+            <a href="#">1</a>
+            <!--Активная страница-->
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <!--Если есть еще страницы дальше-->
+            <a href="#">»</a>
+        </div>
     </div>
 </div>
+
 
 </body>
 </html>
