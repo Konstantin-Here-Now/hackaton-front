@@ -21,7 +21,6 @@
     transition: 0.5s;
 }
 
-/*Доделать функционал ссылок*/
 .list-element:hover {
     transform: scale(1.03);
 }
