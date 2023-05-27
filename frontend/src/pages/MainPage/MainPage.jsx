@@ -27,21 +27,21 @@ function MainPage() {
     <section>
         <div className="container start-page">
             <a href="#" className="card-link">
-                <Link to="/create/resume" style={{textDecoration: "none"}}>
+                <Link to="/login" style={{textDecoration: "none"}}>
                     <div className="card">
                         Разместить резюме
                     </div>
                 </Link>
             </a>
             <a href="#" className="card-link">
-                <Link to="/create/work" style={{textDecoration: "none"}}>
+                <Link to="/login" style={{textDecoration: "none"}}>
                     <div className="card">
                         Разместить вакансию
                     </div>
                 </Link>
             </a>
             <a href="#" className="card-link two-column-wide">
-                <Link to="/list/works" style={{textDecoration: "none"}}>
+                <Link to="/job/list" style={{textDecoration: "none"}}>
                     <div className="card">
                         Просмотреть вакансии
                     </div>

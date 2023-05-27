@@ -1,14 +1,15 @@
-import {Link, useNavigate} from "react-router-dom";
+import {Link, Route, useNavigate} from "react-router-dom";
 import React, {useContext, useEffect, useState} from 'react';
 import {AuthContext} from "../context/AuthContext";
 import {logoutUser, auth} from '../configs/firebase';
 import User from "./User";
 import {Navbar, Nav, Container} from 'react-bootstrap';
-import {isUserAdmin} from "../utils/utils";
+import {isAdmin, isUserAdmin} from "../utils/utils";
 import {useDispatch, useSelector} from "react-redux";
 
 
 import {setUserAdmin, setUserWorker} from '../store/todoSlice';
+import DetailJobPage from "../pages/DetailJobPage/DetailJobPage";
 
 function Header() {
 
@@ -35,10 +36,6 @@ function Header() {
 
     const user = useSelector(state => state.todos.user);
 
-    const isAdmin = () => {
-        return user === "admin"
-    }
-
     useEffect(()=>{},
         [user])
 
@@ -50,56 +47,93 @@ function Header() {
         <div className="header">
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    {isAdmin()
-                        ?
-                        <Navbar.Brand href="#">
-                            <Link to="/" style={{textDecoration: "none"}}>
-                                <a className="navbar-brand" href="#">Команда</a>
-                            </Link>
-                        </Navbar.Brand>
-                        :
-                        <></>
-                    }
-
+                    <Navbar.Brand href="#">
+                        <Link to="/" style={{textDecoration: "none"}}>
+                            <a className="navbar-brand" href="#">Команда</a>
+                        </Link>
+                    </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
+
+
                         <Nav className="me-auto">
-                            <Nav.Link href="#">
-                                <Link to="/" style={{textDecoration: "none"}}>
-                                    <li className="nav-item">
-                                        <a className="nav-link" aria-current="page" href="#">Главная</a>
-                                    </li>
-                                </Link>
-                            </Nav.Link>
 
-                            <Nav.Link href="#">
-                                <Link to="/list" style={{textDecoration: "none"}}>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Люди</a>
-                                    </li>
-                                </Link>
-                            </Nav.Link>
-
-                            {
-                                showLink ?
+                            {isAdmin(user)
+                                ?
+                                <>
                                     <Nav.Link href="#">
-                                        <Link to="/edit" style={{textDecoration: "none"}}>
+                                        <Link to="/job/profile" style={{textDecoration: "none"}}>
                                             <li className="nav-item">
-                                                <a className="nav-link" href="#">Добавить</a>
+                                                <a className="nav-link" href="#">Профиль</a>
                                             </li>
                                         </Link>
-                                    </Nav.Link> : <></>
+                                    </Nav.Link>
+
+
+                                    <Nav.Link href="#">
+                                        <Link to="/job/create/job" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">Создать вакансию</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+
+
+                                    <Nav.Link href="#">
+                                        <Link to="/worker/list" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">Список работников</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+                                </>
+                                :
+                                <>
+                                    <Nav.Link href="#">
+                                        <Link to="/worker/profile" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">Профиль</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+
+                                    <Nav.Link href="#">
+                                        <Link to="/worker/create/resume" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">Создать портфолио</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+
+
+                                    <Nav.Link href="#">
+                                        <Link to="/job/list" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">Список вакансий</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+                                </>
                             }
 
                             <Nav.Link href="#">
-                                <Link to="/private" style={{textDecoration: "none"}}>
+                                <Link to="/login" style={{textDecoration: "none"}}>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Связаться с нами</a>
+                                        <a className="nav-link" href="#">Войти</a>
                                     </li>
                                 </Link>
                             </Nav.Link>
+
+                            <Nav.Link href="#">
+                                <Link to="/register" style={{textDecoration: "none"}}>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Регистрация</a>
+                                    </li>
+                                </Link>
+                            </Nav.Link>
+
                         </Nav>
 
                         <Nav>

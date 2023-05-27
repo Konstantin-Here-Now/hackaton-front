@@ -20,13 +20,13 @@ import MainPage from "./pages/MainPage/MainPage";
 // JOB - use
 import DetailCheafProfilePage from "./pages/DetailCheafProfilePage/DetailCheafProfilePage";
 import CreateJobPage from "./pages/CreateJobPage/CreateJobPage";
-import ListResumesPage from "./pages/ListResumesPage/ListResumesPage";
+import ListWorkerPage from "./pages/ListWorkerPage/ListWorkerPage";
 
 // WORKER - user
 import CreateWorkerResumePage from "./pages/CreateWorkerResumePage/CreateWorkerResumePage";
 import ListJobPage from "./pages/ListJobPage/ListJobPage";
 import DetailJobPage from "./pages/DetailJobPage/DetailJobPage";
-
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import TestPage from "./pages/TestPage";
 import NavigateError from "./components/NavigateError";
 
@@ -53,7 +53,7 @@ function App() {
                     <Route path="/job/create/profile" element={<CreateJobPage/>}/>
                     <Route path="/job/create/job" element={<CreateJobPage/>}/>
                     {/* TODO page */}
-                    <Route path="/job/profile" element={<DetailJobPage/>}/>
+                    <Route path="/job/profile" element={<ProfilePage/>}/>
                     <Route path="/job/detail" element={<DetailJobPage/>}/>
                     <Route path="/job/list" element={<ListJobPage/>}/>
 
@@ -63,8 +63,8 @@ function App() {
                     <Route path="/worker/create/resume" element={<CreateWorkerResumePage/>}/>
                     {/* TODO page */}
                     <Route path="/worker/detail" element={<DetailCheafProfilePage/>}/>
-                    <Route path="/worker/profile" element={<DetailCheafProfilePage/>}/>
-                    <Route path="/worker/list" element={<ListResumesPage/>}/>
+                    <Route path="/worker/profile" element={<ProfilePage/>}/>
+                    <Route path="/worker/list" element={<ListWorkerPage/>}/>
 
                     {/* ERRORS */}
                     <Route path="*" element={<NotFoundPage/>}/>

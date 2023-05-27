@@ -4,4 +4,10 @@ const isUserAdmin = userUid => {
   return userUid === adminUid
 }
 
-export {isUserAdmin}
+const isAdmin = (user) => {
+  return user === "admin"
+}
+
+export {isUserAdmin, isAdmin}
+
+
