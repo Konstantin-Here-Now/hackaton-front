@@ -3,7 +3,7 @@ import "./create_work.sass"
 import React from 'react';
 import {Container} from "react-bootstrap";
 
-function CreateCreateWorkPagePage(props) {
+function CreateJobPage(props) {
     return (
         <>
             <section className="main-team pt-3 pb-3">
@@ -15,4 +15,4 @@ function CreateCreateWorkPagePage(props) {
     );
 }
 
-export default CreateCreateWorkPagePage;
+export default CreateJobPage;

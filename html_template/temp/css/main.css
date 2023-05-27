@@ -64,7 +64,6 @@ body {
 .usual-button {
     appearance: none;
     border: 0;
-    border-radius: 10px;
     background: #4676D7;
     color: #fff;
     padding: 8px 16px;
@@ -77,5 +76,5 @@ body {
 
 .usual-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #cbd6ee;
+    box-shadow: 0 0 0 8px #cbd6ee;
 }

@@ -1,0 +1,60 @@
+.container-grid 
+	display: grid 
+	grid-template-columns: repeat(4, 1fr) 
+	grid-gap: 16px 
+	margin: 3% auto 
+	width: 90% 
+.list 
+	grid-column: span 3 
+.list-element 
+	height: 8rem 
+	margin-bottom: 1rem 
+	padding: 0.5rem 
+	border: 0 
+	border-radius: 16px 
+	transition: 0.5s 
+	&:hover 
+		transform: scale(1.03) 
+.card-link, .card-link:hover, .card-link:active 
+	text-decoration: none 
+	color: black 
+.list-element h3, h4 
+	margin: auto 
+.one-line 
+	display: flex 
+	justify-content: space-between 
+.job-name 
+	color: darkslategrey 
+.filter 
+	margin: 1rem 
+	padding: 1rem 
+	text-align: center 
+	.card 
+		border: 0 
+		border-radius: 8px 
+	button 
+		margin: 1rem 
+.filter-function 
+	padding: 1rem 
+	input 
+		font-size: 1rem 
+		border: 1px solid lightgrey 
+		border-radius: 10px 
+.paginator 
+	margin-top: 2rem 
+	height: 2.5rem 
+	text-align: center 
+	a 
+		color: black 
+		background: floralwhite 
+		border: 0 
+		border-radius: 8px 
+		padding: 0.5rem 1rem 
+		text-decoration: none 
+		transition: background-color .3s 
+		&.active 
+			background-color: darkslategrey 
+			color: floralwhite 
+		&:hover 
+			&:not(.active) 
+				background-color: #a6a6a6 

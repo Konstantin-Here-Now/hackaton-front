@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация</title>
+    <title>Регистрация соискателя</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
 
@@ -34,24 +34,22 @@
     </div>
 </header>
 
-<div class="container card">
-    <form class="form" method="post">
-        <div class="two-column-wide">
-            <label for="email">Электронная почта</label><br>
-            <input type="text" id="email" name="email"/>
+<div class="container start-page">
+    <a href="log.html" class="card-link">
+        <div class="card">
+            Разместить резюме
         </div>
-
-        <div>
-            <label for="password1">Введите пароль</label><br>
-            <input type="password" id="password1" name="password1"/>
+    </a>
+    <a href="log.html" class="card-link">
+        <div class="card">
+            Разместить вакансию
         </div>
-        <div>
-            <label for="password2">Повторите пароль</label><br>
-            <input type="password" id="password2" name="password2"/>
+    </a>
+    <a href="vacancies.html" class="card-link two-column-wide">
+        <div class="card">
+            Просмотреть вакансии
         </div>
-        <br>
-        <button class="submit two-column-wide usual-button" type="submit">Зарегистрироваться</button>
-    </form>
+    </a>
 </div>
 
 </body>
