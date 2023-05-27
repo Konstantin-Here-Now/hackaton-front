@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/list.css">
 </head>
 <body>
 
@@ -34,10 +35,19 @@
     </div>
 </header>
 
-<div class="container start-page">
-    <div class="card two-column-wide">
-        Профиль пользователя...
-    </div>
+<div class="container card">
+    <form class="form" method="post">
+        <div>
+            <label for="email">Ваша электронная почта</label><br>
+            <!--Это поле должно автозаполняться из БД-->
+            <input type="text" id="email" name="email"/>
+        </div>
+        <button class="submit usual-button" type="submit">Изменить электронную почту</button>
+        <!--Если авторизованный пользователь - соискатель, то ему доступны эта кнопка-->
+        <a href="create_resume.html" class="submit two-column-wide usual-button">Отправить резюме</a>
+        <!--Если авторизованный пользователь - hr, то ему доступны эта кнопка-->
+        <a href="create_vacancy.html" class="submit two-column-wide usual-button">Создать вакансию</a>
+    </form>
 </div>
 
 </body>

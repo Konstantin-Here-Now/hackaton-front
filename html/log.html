@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Вход в систему</title>
+    <title>Авторизация</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
 
@@ -34,10 +34,20 @@
     </div>
 </header>
 
-<div class="container start-page">
-    <div class="card two-column-wide">
-        Форма для авторизации...
-    </div>
+<div class="container card">
+    <form class="form" method="post">
+        <div class="two-column-wide">
+            <label for="email">Электронная почта</label><br>
+            <input type="text" id="email" name="email"/>
+        </div>
+
+        <div class="two-column-wide">
+            <label for="password">Пароль</label><br>
+            <input type="password" id="password" name="password1"/>
+        </div>
+        <br>
+        <button class="submit two-column-wide usual-button" type="submit">Авторизоваться</button>
+    </form>
 </div>
 
 </body>

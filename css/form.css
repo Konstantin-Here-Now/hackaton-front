@@ -13,6 +13,7 @@
 }
 
 .submit {
+    text-decoration: none;
     font-size: x-large;
     width: 100%;
     text-align: center;
@@ -22,7 +23,13 @@
     grid-column: span 2;
 }
 
-.form input, select, button {
+.input-massive {
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 10px;
+}
+
+.form input, select, button, textarea {
     font-family: inherit;
     font-size: inherit;
 
@@ -37,6 +44,10 @@
     border: 0;
 }
 
-.two-column-wide input {
+.two-column-wide input, textarea {
     width: 95%;
+}
+
+.two-column-wide textarea {
+    height: 8rem;
 }
