@@ -4,7 +4,7 @@ const todoSlice = createSlice({
     name: 'todos',
     initialState: {
         todos: [],
-        user: "",
+        user: "admin",
     },
     reducers: {
         addTodo(state, action) {
@@ -26,10 +26,17 @@ const todoSlice = createSlice({
         },
         rmUser(state, action) {
             state.user = ""
-        }
+        },
+        setUserAdmin(state, action){
+            state.user = "admin"
+        },
+        setUserWorker(state, action){
+            state.user = "worker"
+        },
+
     },
 });
 
-export const {addTodo, toggleComplete, removeTodo, addUser, rmUser} = todoSlice.actions;
+export const {addTodo, toggleComplete, removeTodo, addUser, rmUser, setUserAdmin, setUserWorker} = todoSlice.actions;
 
 export default todoSlice.reducer;
