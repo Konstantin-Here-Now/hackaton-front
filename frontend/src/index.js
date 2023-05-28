@@ -4,21 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
-import {AuthProvider} from "./context/AuthContext";
 import store from './store';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
+import {AuthProvider} from 'react-auth-kit'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <AuthProvider>
+        <AuthProvider authType={'cookie'}
+                      authName={'_auth'}
+                      cookieDomain={window.location.hostname}
+                      cookieSecure={window.location.protocol === "https:"}>
+            <Provider store={store}>
                 <BrowserRouter>
                     <App/>
                 </BrowserRouter>
-            </AuthProvider>
-        </Provider>
+            </Provider>
+        </AuthProvider>
     </React.StrictMode>
 );
 

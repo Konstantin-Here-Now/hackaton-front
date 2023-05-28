@@ -1,6 +1,5 @@
 import React from 'react';
 import './main_page.sass';
-import HeadCarousel from "../../components/HeadCarousel/HeadCarousel";
 import {NavLink} from "react-router-dom";
 import {Link, useNavigate} from "react-router-dom";
 

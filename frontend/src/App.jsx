@@ -5,24 +5,18 @@ import Footer from "./components/Footer";
 import Content from "./components/Content";
 
 import React, {useContext} from 'react';
-import {AuthContext} from "./context/AuthContext";
 import NotFoundPage from "./pages/NotFoundPage";
 import {ToastContainer} from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Platform - use
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MainPage from "./pages/MainPage/MainPage";
-
-// JOB - use
 import DetailCheafProfilePage from "./pages/DetailCheafProfilePage/DetailCheafProfilePage";
 import CreateJobPage from "./pages/CreateJobPage/CreateJobPage";
 import ListWorkerPage from "./pages/ListWorkerPage/ListWorkerPage";
-
-// WORKER - user
 import CreateWorkerResumePage from "./pages/CreateWorkerResumePage/CreateWorkerResumePage";
 import ListJobPage from "./pages/ListJobPage/ListJobPage";
 import DetailJobPage from "./pages/DetailJobPage/DetailJobPage";
@@ -31,9 +25,6 @@ import TestPage from "./pages/TestPage";
 import NavigateError from "./components/NavigateError";
 
 function App() {
-
-    // получим текущего юзера
-    const {currentUser} = useContext(AuthContext);
 
     return (
         <div className="App">

@@ -1,36 +1,13 @@
 import {Link, Route, useNavigate} from "react-router-dom";
 import React, {useContext, useEffect, useState} from 'react';
-import {AuthContext} from "../context/AuthContext";
-import {logoutUser, auth} from '../configs/firebase';
-import User from "./User";
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import {isAdmin, isUserAdmin} from "../utils/utils";
 import {useDispatch, useSelector} from "react-redux";
-
-
 import {setUserAdmin, setUserWorker} from '../store/todoSlice';
 import DetailJobPage from "../pages/DetailJobPage/DetailJobPage";
 
 function Header() {
-
-    // получим текущего юзера
-    const {currentUser, setCurrentUser} = useContext(AuthContext);
-
     const navigate = useNavigate();
-
-    const [showLink, setShowLink] = useState(false);
-
-    useEffect(() => {
-        isUserAdmin(auth?.currentUser?.uid) ? setShowLink(true) : setShowLink(false)
-    }, [currentUser, showLink])
-
-    const handleLogout = () => {
-        logoutUser()
-        setCurrentUser(null)
-        setShowLink(false)
-        navigate("/")
-    }
-
 
     const dispatch = useDispatch();
 
