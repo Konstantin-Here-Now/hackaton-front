@@ -1,9 +1,5 @@
 # Проект на хакатон Sovcombank 2023
 
-[//]: # (## Демо:)
-
-[//]: # ([![Watch the video]&#40;./materials/prototype_preview.jpg&#41;]&#40;https://youtu.be/AK5WozSrqHY;&#41;)
-
 ## Оглавление
 0. [Разработчик](#Команда)
 1. [Описание](#Описание)
@@ -14,21 +10,22 @@
 7. [Запуск](#Запуск)
 
 ## Команда
-1. [Дмитрий Борисов](https://t.me/DmitriiBorisov) - frontend
+1. [Andrew Erema](https://t.me/Eremaan) - product-менеджер
 2. [Denis Deonis](https://t.me/DenisDeonis) - backend
-3. [Константин](https://t.me/Tealdris) - analyst
-4. [Andrew Erema](https://t.me/Eremaan) - analyst
-5. [Настя](https://t.me/NisLastya) - analyst
+3. [Дмитрий Борисов](https://t.me/DmitriiBorisov) - frontend
+5. [Константин](https://t.me/riabtsewkonst) - frontend
 
 [:arrow_up:Оглавление](#Оглавление)
 
 ## Описание
-Визуальный интерфейс для аналога Headhanter.
+Визуальный интерфейс для аналога Headhunter.
 
 [:arrow_up:Оглавление](#Оглавление)
 
 ## Архитектура
-    forntend - react
+    Frontend - React, JavaScript
+    Backend - Node.js, TypeScript
+    Базы данных - Postgres, MongoDB
 
 [:arrow_up:Оглавление](#Оглавление)
 

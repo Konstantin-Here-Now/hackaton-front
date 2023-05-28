@@ -1,0 +1,1 @@
+{"version":3,"file":"JobIdModel.js","sourceRoot":"","sources":["../../../src/domain/models/JobIdModel.ts"],"names":[],"mappings":";;;AAEA,MAAa,UAAU;IAInB,YACI,MAAc;QAEd,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACzB,CAAC;IAED,MAAM,CAAC,MAAe;QAClB,IAAI,CAAC,CAAC,MAAM,YAAY,UAAU,CAAC;YAAE,OAAO,KAAK,CAAC;QAClD,OAAO,IAAI,CAAC,MAAM,KAAK,MAAM,CAAC,MAAM,CAAC;IACvC,CAAC;CACN;AAdD,gCAcC"}
