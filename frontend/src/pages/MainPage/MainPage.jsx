@@ -13,12 +13,6 @@ import {
 function MainPage() {
   return (
     <>
-      <section className="main-team pt-3 pb-3">
-        <Container>
-          <h1 className="main-team__header text-center pb-5 pt-5">Главная страница</h1>
-        </Container>
-      </section>
-
     <section>
         <div className="container start-page">
             <a href="#" className="card-link">

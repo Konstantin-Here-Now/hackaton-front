@@ -1,5 +1,5 @@
-import { GET_USER_META, META_ADD_URL } from "./MetaUrl";
-
+import {GET_USER_META, META_ADD_PLACE_URL, META_ADD_URL} from "./MetaUrl";
+import { HEADERS, POST, GET} from "../utils/methods";
 
 export class MetaApi {
     async addMeta(specialisation, salary, first_name, last_name, city, token) {
@@ -26,7 +26,8 @@ export class MetaApi {
 
     async addPlaceWork([time_start, time_end, specialisation, resbilities], token){
         const body = JSON.stringify([time_start, time_end, specialisation, resbilities]);
-        const rawRes = await fetch(META_ADD_PLACE_URL+token, {
+        const URL = META_ADD_PLACE_URL+token
+        const rawRes = await fetch(URL, {
             method: POST,
             headers: HEADERS,
             body: body,
@@ -36,11 +37,23 @@ export class MetaApi {
     }
 
     async getUserMeta(token){
-        const rawRes = await fetch(GET_USER_META+token, {
+        let URL = GET_USER_META+token
+        const rawRes = await fetch(URL, {
             method: GET,
             headers: HEADERS,
         });
         const content = await rawRes.json();
+        console.log(content)
+        return content;
+    }
+
+    async getRole(token){
+        const rawRes = await fetch("http://84.201.175.72:3002/meta/role/"+token, {
+            method: GET,
+            headers: HEADERS,
+        });
+        const content = await rawRes.json();
+        console.log(content);
         return content;
     }
 

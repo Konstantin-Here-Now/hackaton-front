@@ -44,7 +44,7 @@ function App() {
                     <Route path="/job/create/job" element={<CreateJobPage/>}/>
                     <Route path="/job/profile" element={<ProfilePage/>}/>
                     <Route path="/job/list" element={<ListJobPage/>}/>
-                    <Route path="/job/detail" element={<DetailJobPage/>}/>
+                    <Route path="/job/detail/:id" element={<DetailJobPage/>}/>
 
                     {/* WORKER */}
                     <Route path="/worker/create/resume" element={<CreateWorkerResumePage/>}/>

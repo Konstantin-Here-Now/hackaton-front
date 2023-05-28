@@ -4,7 +4,7 @@ const todoSlice = createSlice({
     name: 'todos',
     initialState: {
         todos: [],
-        user: "admin",
+        user: "",
         token: ""
     },
     reducers: {
@@ -35,10 +35,10 @@ const todoSlice = createSlice({
             state.user = ""
         },
         setUserAdmin(state, action) {
-            state.user = "admin"
+            state.user = "hr"
         },
         setUserWorker(state, action) {
-            state.user = "worker"
+            state.user = "user"
         },
 
     },

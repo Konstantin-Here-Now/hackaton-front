@@ -1,23 +1,42 @@
 import {Link, Route, useNavigate} from "react-router-dom";
 import React, {useContext, useEffect, useState} from 'react';
 import {Navbar, Nav, Container} from 'react-bootstrap';
-import {isAdmin, isUserAdmin} from "../utils/utils";
+import {isAdmin, isWorker} from "../utils/utils";
 import {useDispatch, useSelector} from "react-redux";
 import {setUserAdmin, setUserWorker} from '../store/todoSlice';
 import DetailJobPage from "../pages/DetailJobPage/DetailJobPage";
+import {MetaApi} from "../api/MetaApi";
+import {addToken, rmToken, rmUser} from '../store/todoSlice';
 
 function Header() {
+
+    const [role, setRole] = useState("");
+
+    let metaApi = new MetaApi()
+
+    const token = useSelector(state => state.todos.token);
+
+    useEffect(() => {
+            metaApi.getRole(token).then((data) => {
+                setRole(data?.Content?.name)
+            })
+        },
+        [token])
+
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
-    const user = useSelector(state => state.todos.user);
+    // const user = useSelector(state => state.todos.user);
 
-    useEffect(()=>{},
-        [user])
+    useEffect(() => {
+        },
+        [role])
 
-    const toggleUser = () => {
-        user === "admin" ? dispatch(setUserWorker()) : dispatch(setUserAdmin())
+    const logoutHande = () => {
+        dispatch(rmUser())
+        dispatch(rmToken())
+        setRole("")
     }
 
     return (
@@ -36,8 +55,7 @@ function Header() {
 
 
                         <Nav className="me-auto">
-
-                            {isAdmin(user)
+                            {isAdmin(role)
                                 ?
                                 <>
                                     <Nav.Link href="#">
@@ -67,6 +85,11 @@ function Header() {
                                     </Nav.Link>
                                 </>
                                 :
+                                <></>
+                            }
+
+                            {isWorker(role)
+                                ?
                                 <>
                                     <Nav.Link href="#">
                                         <Link to="/worker/profile" style={{textDecoration: "none"}}>
@@ -93,43 +116,60 @@ function Header() {
                                         </Link>
                                     </Nav.Link>
                                 </>
+                                :
+                                <></>
                             }
 
-                            <Nav.Link href="#">
-                                <Link to="/login" style={{textDecoration: "none"}}>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Войти</a>
-                                    </li>
-                                </Link>
-                            </Nav.Link>
 
-                            <Nav.Link href="#">
-                                <Link to="/register" style={{textDecoration: "none"}}>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Регистрация</a>
-                                    </li>
-                                </Link>
-                            </Nav.Link>
+                            {
+                                role
+                                    ?
+                                    <Nav.Link href="#">
+                                        <Link to="#" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#" onClick={logoutHande}>Выйти</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+                                    :
+                                    <Nav.Link href="#">
+                                        <Link to="/login" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">Войти</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+                            }
+
+                            {
+                                role
+                                    ?
+                                    <Nav.Link href="#">
+                                        <Link to="#" style={{textDecoration: "none"}}>
+                                            <li className="nav-item">
+                                                <a className="nav-link" href="#">{role}</a>
+                                            </li>
+                                        </Link>
+                                    </Nav.Link>
+                                    :
+                                    <></>
+                            }
+
+
+                            {/*<Nav.Link href="#">*/}
+                            {/*    <Link to="/register" style={{textDecoration: "none"}}>*/}
+                            {/*        <li className="nav-item">*/}
+                            {/*            <a className="nav-link" href="#">Регистрация</a>*/}
+                            {/*        </li>*/}
+                            {/*    </Link>*/}
+                            {/*</Nav.Link>*/}
 
                         </Nav>
 
-                        <Nav>
-                            <Nav.Link href="#">
-                                <Link to="#" style={{textDecoration: "none"}}>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">{user}</a>
-                                    </li>
-                                </Link>
-                            </Nav.Link>
+                        {/*<Nav>*/}
 
-                            <Nav.Link href="#">
-                                <Link to="#" style={{textDecoration: "none"}}>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#" onClick={toggleUser}>Toggle</a>
-                                    </li>
-                                </Link>
-                            </Nav.Link>
-                        </Nav>
+
+                        {/*</Nav>*/}
 
                     </Navbar.Collapse>
                 </Container>

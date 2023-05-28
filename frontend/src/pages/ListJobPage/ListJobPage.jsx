@@ -1,12 +1,48 @@
 import "./list_work.sass"
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import {JobAPi} from "../../api/JobApi";
 
-function ListJobPage(props) {
+function Job(props) {
     return (
         <>
+            <Link to="/job/detail" style={{textDecoration: "none"}}>
+                <a href="#" className="card-link">
+                    <div className="card list-element">
+                        <div className="one-line">
+                            <h1 className="job-name">{props.profession_name}</h1>
+                            <h2>{props.company_name}</h2>
+                        </div>
+                        <div className="one-line">
+                            <div>
+                                <h3>Опыт от 1 года</h3>
+                                <h3>{props.city_name}</h3>
+                            </div>
+                            <h2>от {props.salary} руб.</h2>
+                        </div>
+                    </div>
+                </a>
+            </Link>
+        </>
+    );
+}
+
+
+function ListJobPage(props) {
+
+    const [job, setJob] = useState([]);
+
+    const jobApi = new JobAPi()
+
+    useEffect(() => {
+            jobApi.getJob().then((data) => setJob(data.Content))
+        },
+        [])
+
+    return (
+        <section className="list-job">
             <div className="container-grid">
                 <div className="filter">
                     <form className="card">
@@ -25,95 +61,7 @@ function ListJobPage(props) {
 
                 <div className="list">
 
-                    <Link to="/job/detail" style={{textDecoration: "none"}}>
-                        <a href="#" className="card-link">
-                            <div className="card list-element">
-                                <div className="one-line">
-                                    <h1 className="job-name">Java-разработчик</h1>
-                                    <h2>Совкомбанк-технологии</h2>
-                                </div>
-                                <div className="one-line">
-                                    <div>
-                                        <h3>Опыт от 1 года</h3>
-                                        <h3>Москва</h3>
-                                    </div>
-                                    <h2>от 100 000 руб.</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-
-                    <Link to="/job/detail" style={{textDecoration: "none"}}>
-                        <a href="#" className="card-link">
-                            <div className="card list-element">
-                                <div className="one-line">
-                                    <h1 className="job-name">Старший менеджер</h1>
-                                    <h2>Совкомбанк</h2>
-                                </div>
-                                <div className="one-line">
-                                    <div>
-                                        <h3>Опыт от 2 лет</h3>
-                                        <h3>Москва</h3>
-                                    </div>
-                                    <h2>от 90 000 руб.</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-
-                    <Link to="/job/detail" style={{textDecoration: "none"}}>
-                        <a href="#" className="card-link">
-                            <div className="card list-element">
-                                <div className="one-line">
-                                    <h1 className="job-name">Аналитик данных</h1>
-                                    <h2>Совкомбанк</h2>
-                                </div>
-                                <div className="one-line">
-                                    <div>
-                                        <h3>Опыт от 1 года</h3>
-                                        <h3>Санкт-Петербург</h3>
-                                    </div>
-                                    <h2>от 86 000 руб.</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-
-                    <Link to="/job/detail" style={{textDecoration: "none"}}>
-                        <a href="#" className="card-link">
-                            <div className="card list-element">
-                                <div className="one-line">
-                                    <h1 className="job-name">Ещё одна вакансия</h1>
-                                    <h2>Совкомбанк-технологии</h2>
-                                </div>
-                                <div className="one-line">
-                                    <div>
-                                        <h3>Опыт от 1 года</h3>
-                                        <h3>Москва</h3>
-                                    </div>
-                                    <h2>от 100 000 руб.</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-
-                    <Link to="/job/detail" style={{textDecoration: "none"}}>
-                        <a href="#" className="card-link">
-                            <div className="card list-element">
-                                <div className="one-line">
-                                    <h1 className="job-name">Ещё одна вакансия</h1>
-                                    <h2>Совкомбанк-технологии</h2>
-                                </div>
-                                <div className="one-line">
-                                    <div>
-                                        <h3>Опыт от 1 года</h3>
-                                        <h3>Москва</h3>
-                                    </div>
-                                    <h2>от 100 000 руб.</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
+                    {job.length ? job.map(el => Job({...el, key: el.id})) : <></>}
 
                     <div className="paginator">
                         <a href="#">«</a>
@@ -127,7 +75,7 @@ function ListJobPage(props) {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 

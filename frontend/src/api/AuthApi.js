@@ -1,5 +1,6 @@
-import { HEADERS, POST } from "../utils/methods";
+import {GET, HEADERS, POST} from "../utils/methods";
 import { CHANGE_PASSWORD_URL, LOGIN_URL, SIGN_URL } from "./AuthUrl";
+import {JOB_GET_URL} from "./JobUrl";
 
 
 export class AuthApi {
@@ -37,7 +38,6 @@ export class AuthApi {
         const content = await rawRes.json();
         console.log(content);
         return content;
-        
     }
 }
 

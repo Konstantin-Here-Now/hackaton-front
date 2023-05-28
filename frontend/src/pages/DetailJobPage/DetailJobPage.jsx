@@ -1,10 +1,25 @@
 import "./detail_resumes.sass"
-
-import React from 'react';
+import {useParams, useNavigate} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
 import {Container} from "react-bootstrap";
+import {JobAPi} from "../../api/JobApi";
 
 function DetailJobPage(props) {
-    
+    const {id} = useParams()
+
+    console.log(id)
+
+    // TODO
+    // const [job, setJob] = useState([1, 2, 3]);
+    //
+    // const jobApi = new JobAPi()
+    //
+    // useEffect(() => {
+    //         jobApi.jobAddResponse(id).then((data) => setJob(data.Content))
+    //     },
+    //     [])
+
+
     return (
         <>
             <div className="container card one-element">

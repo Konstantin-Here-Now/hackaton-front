@@ -1,140 +1,136 @@
-.site-header
-  display: flex
-  top: 10px
-  width: 100%
-  justify-content: space-between
+.list-resume
+  .wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 90%
+    margin: auto
+    border: 2px solid lightgrey
+    border-radius: 10px
+    background: floralwhite
+    font-family: sans-serif
+    font-size: 20px
+    font-weight: bolder
 
-.wrapper
-  display: flex
-  justify-content: space-between
-  align-items: center
-  width: 90%
-  margin: auto
-  border: 2px solid lightgrey
-  border-radius: 10px
-  background: floralwhite
-  font-family: sans-serif
-  font-size: 20px
-  font-weight: bolder
+    *
+      color: darkslategrey
+      padding: 4px
+      display: inline-block
+      text-decoration: none
+      transition: 0.5s
 
-  *
-    color: darkslategrey
-    padding: 4px
-    display: inline-block
-    text-decoration: none
-    transition: 0.5s
+    *:hover
+      color: #ff4b5f
 
-  *:hover
-    color: #ff4b5f
+  .header-left
+    *
+      margin-left: 8px
 
-.header-left
-  *
-    margin-left: 8px
+  .header-left li:hover, .header-right li:hover
+    transform: scale(1.2)
 
-.header-left li:hover, .header-right li:hover
-  transform: scale(1.2)
+  .header-right
+    *
+      margin-right: 8px
 
-.header-right
-  *
-    margin-right: 8px
-
-.container
-  margin: auto
-  width: 70%
-
-.card
-  background: floralwhite
-  box-shadow: 5px 5px 15px black
-
-.usual-button
-  appearance: none
-  border: 0
-  border-radius: 10px
-  background: #4676D7
-  color: #fff
-  padding: 8px 16px
-  transition: 0.5s
-
-  &:hover
-    background: #ff4b5f
-
-  &:focus
-    outline: none
-    box-shadow: 0 0 0 3px #cbd6ee
-
-.container-grid
-  display: grid
-  grid-template-columns: repeat(4, 1fr)
-  grid-gap: 16px
-  margin: 3% auto
-  width: 90%
-
-.list
-  grid-column: span 3
-
-.list-element
-  height: 8rem
-  margin-bottom: 1rem
-  padding: 0.5rem
-  border: 0
-  border-radius: 16px
-  transition: 0.5s
-
-  &:hover
-    transform: scale(1.03)
-
-.card-link, .card-link:hover, .card-link:active
-  text-decoration: none
-  color: black
-
-.list-element h3, h4
-  margin: auto
-
-.one-line
-  display: flex
-  justify-content: space-between
-
-.job-name
-  color: darkslategrey
-
-.filter
-  margin: 1rem
-  padding: 1rem
-  text-align: center
+  .container
+    margin: auto
+    width: 70%
 
   .card
-    border: 0
-    border-radius: 8px
-
-  button
-    margin: 1rem
-
-.filter-function
-  padding: 1rem
-
-  input
-    font-size: 1rem
-    border: 1px solid lightgrey
-    border-radius: 10px
-
-.paginator
-  margin-top: 2rem
-  height: 2.5rem
-  text-align: center
-
-  a
-    color: black
     background: floralwhite
-    border: 0
-    border-radius: 8px
-    padding: 0.5rem 1rem
-    text-decoration: none
-    transition: background-color .3s
+    box-shadow: 5px 5px 15px black
 
-    &.active
-      background-color: darkslategrey
-      color: floralwhite
+  .usual-button
+    appearance: none
+    border: 0
+    border-radius: 10px
+    background: #4676D7
+    color: #fff
+    padding: 8px 16px
+    transition: 0.5s
 
     &:hover
-      &:not(.active)
-        background-color: #a6a6a6
+      background: #ff4b5f
+
+    &:focus
+      outline: none
+      box-shadow: 0 0 0 3px #cbd6ee
+
+  .container-grid
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 16px
+    margin: 3% auto
+    width: 90%
+
+  .list
+    grid-column: span 3
+
+  .list-element
+    height: 8rem
+    margin-bottom: 1rem
+    padding: 0.5rem
+    border: 0
+    border-radius: 16px
+    transition: 0.5s
+
+    &:hover
+      transform: scale(1.03)
+
+  .card-link, .card-link:hover, .card-link:active
+    text-decoration: none
+    color: black
+
+  .list-element h3, h4
+    margin: auto
+
+  .one-line
+    display: flex
+    justify-content: space-between
+
+  .job-name
+    color: darkslategrey
+
+  .filter
+    margin: 1rem
+    padding: 1rem
+    text-align: center
+
+    .card
+      border: 0
+      border-radius: 8px
+
+    button
+      margin: 1rem
+
+  .filter-function
+    padding: 1rem
+
+    input
+      font-size: 1rem
+      border: 1px solid lightgrey
+      border-radius: 10px
+
+  .paginator
+    margin-top: 2rem
+    height: 2.5rem
+    text-align: center
+
+    a
+      color: black
+      background: floralwhite
+      border: 0
+      border-radius: 8px
+      padding: 0.5rem 1rem
+      text-decoration: none
+      transition: background-color .3s
+
+      &.active
+        background-color: darkslategrey
+        color: floralwhite
+
+      &:hover
+        &:not(.active)
+          background-color: #a6a6a6
+

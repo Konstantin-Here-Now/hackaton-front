@@ -1,9 +1,9 @@
-import { HEADERS, POST } from "../utils/methods";
-import { JOB_ADD_RES_URL, JOB_ADD_URL, JOB_GET_RES_URL } from "./JobUrl";
+import { JOB_ADD_RES_URL, JOB_ADD_URL, JOB_GET_RES_URL, JOB_GET_URL } from "./JobUrl";
+import { HEADERS, POST, GET} from "../utils/methods";
 
 
 export class JobAPi {
-    
+
     async addJob(job_name, salary, exp, emploitment, company, description, tasks, important, plus, conditions, key_skills, city, token){
         const body = JSON.stringify({
             "job_name": job_name,
@@ -26,7 +26,7 @@ export class JobAPi {
         });
         const content = await rawRes.json();
         console.log(content);
-        return content; 
+        return content;
     }
 
     async getJob(){
@@ -60,11 +60,12 @@ export class JobAPi {
             "job_id": job_id
         });
         const rawRes = await fetch(JOB_ADD_RES_URL, {
-            method: POST, 
+            method: POST,
             headers: HEADERS,
             body: body
         });
         const content = await rawRes.json();
+        console.log(content);
         return content;
     }
 
@@ -77,6 +78,6 @@ export class JobAPi {
         console.log(content);
         return content;
     }
-    
+
 }
 

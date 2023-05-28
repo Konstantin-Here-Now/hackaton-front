@@ -1,5 +1,4 @@
 import "./login.sass"
-
 import React, { useState } from 'react';
 import {Container} from "react-bootstrap";
 import {AuthApi} from "../../api/AuthApi";
@@ -45,7 +44,7 @@ function LoginPage(props) {
     }
 
     return (
-        <>
+        <section className="login-page">
             <div className="container card">
                 <form className="form" method="post" onSubmit={handleSubmit}>
                     <div className="two-column-wide">
@@ -70,7 +69,7 @@ function LoginPage(props) {
                     <button className="submit two-column-wide usual-button" type="submit">Авторизоваться</button>
                 </form>
             </div>
-        </>
+        </section>
     );
 }
 

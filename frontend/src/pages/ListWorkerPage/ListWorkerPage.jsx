@@ -9,7 +9,7 @@ function ListWorkerPage(props) {
     let byDimaBorisvo = ''
 
     return (
-        <>
+        <section className="list-resume">
             <div className="container-grid">
                 <div className="filter">
                     <form className="card">
@@ -123,7 +123,7 @@ function ListWorkerPage(props) {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 

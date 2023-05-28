@@ -1,7 +1,11 @@
 const isAdmin = (user) => {
-  return user === "admin"
+  return user === "hr"
 }
 
-export {isAdmin}
+const isWorker = (user) => {
+  return user === "user"
+}
+
+export {isAdmin, isWorker}
 
 
