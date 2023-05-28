@@ -10,11 +10,14 @@ import {
     Image
 } from 'react-bootstrap';
 import {useSelector} from "react-redux";
+import {isAdmin} from "../../utils/utils";
 
 function MainPage() {
 
 
     const token = useSelector(state => state.todos.token);
+
+    const user = useSelector(state => state.todos.user);
 
     useEffect(() => {
         },
@@ -24,29 +27,33 @@ function MainPage() {
         <section className="main-page">
             <div className="container start-page">
 
-                <a href="#" className="card-link">
-                    <Link to={token ? "/worker/create/resume" : "/login"} style={{textDecoration: "none"}}>
-                        <div className="card">
-                            Разместить резюме
-                        </div>
-                    </Link>
-                </a>
+                {
+                    isAdmin(user)
+                        ?
+                        <a href="#" className="card-link two-column-wide">
+                            <Link to={token ? "/job/create/job" : "/login"} style={{textDecoration: "none"}}>
+                                <div className="card">
+                                    Разместить вакансию
+                                </div>
+                            </Link>
+                        </a>
+                        :
+                        <a href="#" className="card-link two-column-wide">
+                            <Link to={token ? "/worker/create/resume" : "/login"} style={{textDecoration: "none"}}>
+                                <div className="card">
+                                    Разместить резюме
+                                </div>
+                            </Link>
+                        </a>
+                }
 
-                <a href="#" className="card-link">
-                    <Link to={token ? "/job/create/job" : "/login"} style={{textDecoration: "none"}}>
-                        <div className="card">
-                            Разместить вакансию
-                        </div>
-                    </Link>
-                </a>
-
-                <Link to="/job/list" style={{textDecoration: "none"}} className="card-link two-column-wide">
-                    <a href="#">
+                <a href="#" className="card-link two-column-wide">
+                    <Link to="/job/list" style={{textDecoration: "none"}}>
                         <div className="card">
                             Просмотреть вакансии
                         </div>
-                    </a>
-                </Link>
+                    </Link>
+                </a>
 
             </div>
         </section>

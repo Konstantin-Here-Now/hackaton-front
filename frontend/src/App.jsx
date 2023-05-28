@@ -21,7 +21,6 @@ import CreateWorkerResumePage from "./pages/CreateWorkerResumePage/CreateWorkerR
 import ListJobPage from "./pages/ListJobPage/ListJobPage";
 import DetailJobPage from "./pages/DetailJobPage/DetailJobPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import TestPage from "./pages/TestPage";
 
 function App() {
 
@@ -37,7 +36,6 @@ function App() {
                     <Route path="/" element={<MainPage/>}/>
                     <Route path='/login' element={<LoginPage/>}/>
                     <Route path='/register' element={<RegisterPage/>}/>
-                    <Route path="/test" element={<TestPage/>}/>
 
                     {/* JOB */}
                     <Route path="/job/create/profile" element={<CreateJobPage/>}/>

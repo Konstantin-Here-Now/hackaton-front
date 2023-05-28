@@ -2,12 +2,23 @@ import "./create_resume.sass"
 
 import React from 'react';
 import {Container} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
 
 function CreateWorkerResumePage(props) {
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        toast.success("Все ок!");
+        navigate("/")
+    }
+
     return (
         <section className="create-worker">
             <div className="container card">
-                <form className="form" method="post">
+                <form className="form" method="post" onSubmit={handleSubmit}>
                     <div className="two-column-wide">
                         <label htmlFor="specialisation">Ваша специализация</label>
                         <input type="text" id="specialisation" name="specialisation"/>

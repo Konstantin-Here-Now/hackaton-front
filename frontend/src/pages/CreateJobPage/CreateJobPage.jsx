@@ -2,12 +2,23 @@ import "./create_work.sass"
 
 import React from 'react';
 import {Container} from "react-bootstrap";
+import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 function CreateJobPage(props) {
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        toast.success("Все ок!");
+        navigate("/")
+    }
+
     return (
         <section className="create-job">
             <div className="container card">
-                <form className="form" method="post">
+                <form className="form" method="post" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="job_name">Название вакансии</label>
                         <input type="text" id="job_name" name="job_name"/>

@@ -6,12 +6,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {setUserAdmin, setUserWorker} from '../store/todoSlice';
 import DetailJobPage from "../pages/DetailJobPage/DetailJobPage";
 import {MetaApi} from "../api/MetaApi";
-import {addToken, rmToken, rmUser} from '../store/todoSlice';
+import {addToken, rmToken, rmUser, setUser} from '../store/todoSlice';
 
 function Header() {
 
     const [role, setRole] = useState("");
 
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     let metaApi = new MetaApi()
 
     const token = useSelector(state => state.todos.token);
@@ -19,13 +22,12 @@ function Header() {
     useEffect(() => {
             metaApi.getRole(token).then((data) => {
                 setRole(data?.Content?.name)
+                dispatch(setUser({user:data.Content.name}))
             })
         },
         [token])
 
-    const navigate = useNavigate();
 
-    const dispatch = useDispatch();
 
     // const user = useSelector(state => state.todos.user);
 
