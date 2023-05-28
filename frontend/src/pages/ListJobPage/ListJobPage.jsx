@@ -8,7 +8,7 @@ import {JobAPi} from "../../api/JobApi";
 function Job(props) {
     return (
         <>
-            <Link to="/job/detail" style={{textDecoration: "none"}}>
+            <Link to={`/job/detail/${props.id}`} style={{textDecoration: "none"}}>
                 <a href="#" className="card-link">
                     <div className="card list-element">
                         <div className="one-line">

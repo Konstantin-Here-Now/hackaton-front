@@ -4,123 +4,75 @@ import React, {useEffect, useState} from 'react';
 import {Container} from "react-bootstrap";
 import {JobAPi} from "../../api/JobApi";
 
+
+
 function DetailJobPage(props) {
     const {id} = useParams()
 
     console.log(id)
 
-    // TODO
-    // const [job, setJob] = useState([1, 2, 3]);
-    //
-    // const jobApi = new JobAPi()
-    //
-    // useEffect(() => {
-    //         jobApi.jobAddResponse(id).then((data) => setJob(data.Content))
-    //     },
-    //     [])
+    const [job, setJob] = useState({});
 
+    const jobApi = new JobAPi()
+
+    useEffect(() => {
+            jobApi.getJobDetail(id).then((data) => setJob(data.Content))
+        },
+        [])
 
     return (
         <section className="detail-job">
             <div className="container card one-element">
-                <h3 className="two-column-wide">Java-разработчик</h3>
+                <h3 className="two-column-wide">{job?.profession_name}</h3>
                 <div>
-                    <h4>Совкомбанк-технологии</h4>
-                    <p>Москва</p>
+                    <h4>{job?.company_name}</h4>
+                    <p>{job?.city_name}</p>
                     <p>Опыт работы от 1 года</p>
                     <p>Полный рабочий день</p>
                 </div>
                 <div className="left-placed">
-                    <h4>от 100 000 руб.</h4>
+                    <h4>от {job?.salary} руб.</h4>
                 </div>
 
                 <div className="two-column-wide">
                     <h4>Описание вакансии</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim id est laborum.
+                        {job?.description}
                     </p>
                 </div>
 
                 <div className="two-column-wide">
                     <h4>Обязанности</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim id est laborum.
+                        {job?.tasks}
                     </p>
                 </div>
 
                 <div className="two-column-wide">
                     <h4>Требования</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim id est laborum.
+                        {job?.important}
                     </p>
                 </div>
 
                 <div className="two-column-wide">
                     <h4>Дополнительные требования</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim id est laborum.
+                        {job?.plus}
                     </p>
                 </div>
 
                 <div className="two-column-wide">
                     <h4>Условия работы</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim id est laborum.
+                        {job?.conditions}
                     </p>
                 </div>
 
                 <div className="two-column-wide">
                     <h4>Ключевые навыки</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim id est laborum.
+                        {job?.key_skills}
                     </p>
                 </div>
 

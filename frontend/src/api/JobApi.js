@@ -79,5 +79,15 @@ export class JobAPi {
         return content;
     }
 
+    async getJobDetail(id){
+        const rawRes = await fetch("http://84.201.175.72:3002/job/detail/"+id, {
+            method: GET,
+            headers: HEADERS,
+        });
+        const content = await rawRes.json();
+        console.log("getJobDetail", content);
+        return content;
+    }
+
 }
 
