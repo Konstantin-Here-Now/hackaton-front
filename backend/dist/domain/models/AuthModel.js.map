@@ -1,0 +1,1 @@
+{"version":3,"file":"AuthModel.js","sourceRoot":"","sources":["../../../src/domain/models/AuthModel.ts"],"names":[],"mappings":";;;AAIA,MAAa,SAAS;IAIjB,YACG,KAAc;QAEd,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACtB,CAAC;IACD,MAAM,CAAC,MAAe;QACnB,IAAI,CAAC,CAAC,MAAM,YAAY,SAAS,CAAC;YAAE,OAAO,KAAK,CAAC;QACjD,OAAO,IAAI,CAAC,KAAK,KAAK,MAAM,CAAC,KAAK,CAAC;IACrC,CAAC;CACN;AAbD,8BAaC"}
