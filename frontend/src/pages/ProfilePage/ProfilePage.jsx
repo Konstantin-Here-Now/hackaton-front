@@ -19,7 +19,7 @@ function ProfilePage(props) {
     }
 
     return (
-        <>
+        <section className="profile-page">
             <div className="container card">
                 <form className="form" method="post" onSubmit={handleSubmit}>
                     <div>
@@ -47,7 +47,7 @@ function ProfilePage(props) {
 
                 </form>
             </div>
-        </>
+        </section>
     );
 }
 

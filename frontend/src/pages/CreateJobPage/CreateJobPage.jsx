@@ -5,7 +5,7 @@ import {Container} from "react-bootstrap";
 
 function CreateJobPage(props) {
     return (
-        <>
+        <section className="create-job">
             <div className="container card">
                 <form className="form" method="post">
                     <div>
@@ -65,7 +65,7 @@ function CreateJobPage(props) {
                     <button className="submit two-column-wide usual-button" type="submit">Создать вакансию</button>
                 </form>
             </div>
-        </>
+        </section>
     );
 }
 

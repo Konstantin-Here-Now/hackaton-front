@@ -37,6 +37,7 @@ function Header() {
         dispatch(rmUser())
         dispatch(rmToken())
         setRole("")
+        navigate('/')
     }
 
     return (

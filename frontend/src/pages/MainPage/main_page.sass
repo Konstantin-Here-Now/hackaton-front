@@ -4,119 +4,121 @@ $section_color_2: white
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Roboto&display=swap')
 
-.start-page
-  margin-top: 5%
-  display: grid
+.main-page
 
-  font-family: sans-serif
-  font-size: large
+  .start-page
+    margin-top: 5%
+    display: grid
 
-  grid-template-columns: repeat(2, 1fr)
-  grid-row-gap: 24px
-  grid-column-gap: 16px
+    font-family: sans-serif
+    font-size: large
 
-.card-link
-  transition: 0.5s
+    grid-template-columns: repeat(2, 1fr)
+    grid-row-gap: 24px
+    grid-column-gap: 16px
 
-
-.card-link:hover
-  transform: scale(1.02)
+  .card-link
+    transition: 0.5s
 
 
-.card-link:hover .card
-  background: linear-gradient(90deg, lavender, lightblue)
-
-.card-link, .card-link:hover, .card-link:active
-  text-decoration: none
-  color: black
+  .card-link:hover
+    transform: scale(1.02)
 
 
-.start-page .card
-  height: 250px
-  line-height: 250px
-  text-align: center
-  border-radius: 16px
+  .card-link:hover .card
+    background: linear-gradient(90deg, lavender, lightblue)
 
-  font-family: sans-serif
-  font-size: 32px
+  .card-link, .card-link:hover, .card-link:active
+    text-decoration: none
+    color: black
 
 
-.two-column-wide
-  grid-column: span 2
+  .start-page .card
+    height: 250px
+    line-height: 250px
+    text-align: center
+    border-radius: 16px
+
+    font-family: sans-serif
+    font-size: 32px
+
+
+  .two-column-wide
+    grid-column: span 2
 
 
 
-.site-header
-  display: flex
-  top: 10px
-  width: 100%
-  justify-content: space-between
+  .site-header
+    display: flex
+    top: 10px
+    width: 100%
+    justify-content: space-between
 
 
-.wrapper
-  display: flex
-  justify-content: space-between
-  align-items: center
+  .wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
 
-  width: 90%
-  margin: auto
+    width: 90%
+    margin: auto
 
-  border: 2px solid lightgrey
-  border-radius: 10px
-  background: floralwhite
+    border: 2px solid lightgrey
+    border-radius: 10px
+    background: floralwhite
 
-  font-family: sans-serif
-  font-size: 20px
-  font-weight: bolder
-
-
-.wrapper *
-  color: darkslategrey
-  padding: 4px
-  display: inline-block
-  text-decoration: none
-  transition: 0.5s
+    font-family: sans-serif
+    font-size: 20px
+    font-weight: bolder
 
 
-.wrapper *:hover
-  color: #ff4b5f
+  .wrapper *
+    color: darkslategrey
+    padding: 4px
+    display: inline-block
+    text-decoration: none
+    transition: 0.5s
 
 
-.header-left *
-  margin-left: 8px
+  .wrapper *:hover
+    color: #ff4b5f
 
 
-.header-left li:hover, .header-right li:hover
-  transform: scale(1.2)
+  .header-left *
+    margin-left: 8px
 
 
-.header-right *
-  margin-right: 8px
+  .header-left li:hover, .header-right li:hover
+    transform: scale(1.2)
 
 
-.container
-  margin: auto
-  width: 70%
+  .header-right *
+    margin-right: 8px
 
 
-.card
-  background: floralwhite
-  box-shadow: 5px 5px 15px black
+  .container
+    margin: auto
+    width: 70%
 
 
-.usual-button
-  appearance: none
-  border: 0
-  background: #4676D7
-  color: #fff
-  padding: 8px 16px
-  transition: 0.5s
+  .card
+    background: floralwhite
+    box-shadow: 5px 5px 15px black
 
 
-.usual-button:hover
-  background: #ff4b5f
+  .usual-button
+    appearance: none
+    border: 0
+    background: #4676D7
+    color: #fff
+    padding: 8px 16px
+    transition: 0.5s
 
 
-.usual-button:focus
-  outline: none
-  box-shadow: 0 0 0 8px #cbd6ee
+  .usual-button:hover
+    background: #ff4b5f
+
+
+  .usual-button:focus
+    outline: none
+    box-shadow: 0 0 0 8px #cbd6ee

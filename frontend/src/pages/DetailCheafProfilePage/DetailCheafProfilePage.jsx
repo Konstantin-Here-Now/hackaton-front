@@ -5,7 +5,7 @@ import {Container} from "react-bootstrap";
 
 function DetailCheafProfilePage(props) {
     return (
-        <>
+        <section className="detail-cheaf">
             <div className="container card one-element">
                 <div className="two-column-wide">
                     <h3>Иван Иванов</h3>
@@ -33,7 +33,7 @@ function DetailCheafProfilePage(props) {
                     Рассмотреть резюме
                 </a>
             </div>
-        </>
+        </section>
     );
 }
 

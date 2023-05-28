@@ -21,7 +21,7 @@ function DetailJobPage(props) {
 
 
     return (
-        <>
+        <section className="detail-job">
             <div className="container card one-element">
                 <h3 className="two-column-wide">Java-разработчик</h3>
                 <div>
@@ -125,7 +125,7 @@ function DetailJobPage(props) {
                 </div>
 
             </div>
-        </>
+        </section>
     );
 }
 

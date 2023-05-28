@@ -5,7 +5,7 @@ import {Container} from "react-bootstrap";
 
 function RegisterPage(props) {
     return (
-        <>
+        <section className="register-page">
             <div className="container card">
                 <form className="form" method="post">
                     <div className="two-column-wide">
@@ -26,7 +26,7 @@ function RegisterPage(props) {
                         </button>
                 </form>
             </div>
-        </>
+        </section>
     );
 }
 
