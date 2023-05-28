@@ -4,6 +4,7 @@ import React from 'react';
 import {Container} from "react-bootstrap";
 
 function DetailJobPage(props) {
+    
     return (
         <>
             <div className="container card one-element">
