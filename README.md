@@ -15,9 +15,10 @@
 
 ## Команда
 1. [Дмитрий Борисов](https://t.me/DmitriiBorisov) - frontend
-2. [Максим Кишик](https://t.me/kishikmaxim) - backend
-3. [Илья Радомский](https://t.me/Tealdris) - devops
-4. [Аня Мархаева](https://t.me/privetobnako) - designer
+2. [Denis Deonis](https://t.me/DenisDeonis) - backend
+3. [Константин](https://t.me/Tealdris) - analyst
+4. [Andrew Erema](https://t.me/Eremaan) - analyst
+5. [Настя](https://t.me/NisLastya) - analyst
 
 [:arrow_up:Оглавление](#Оглавление)
 
