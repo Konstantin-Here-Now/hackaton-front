@@ -7,12 +7,6 @@ import {Link} from "react-router-dom";
 function ListWorkerPage(props) {
     return (
         <>
-            <section className="main-team pt-3 pb-3">
-                <Container>
-                    <h1 className="main-team__header text-center pb-5 pt-5">ListWorksPage</h1>
-                </Container>
-            </section>
-
             <div className="container-grid">
                 <div className="filter">
                     <form className="card">

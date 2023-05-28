@@ -22,7 +22,6 @@ import ListJobPage from "./pages/ListJobPage/ListJobPage";
 import DetailJobPage from "./pages/DetailJobPage/DetailJobPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import TestPage from "./pages/TestPage";
-import NavigateError from "./components/NavigateError";
 
 function App() {
 
@@ -32,7 +31,6 @@ function App() {
             <Content>
                 <ToastContainer position="top-center"/>
                 <Routes>
-
                     {/* OTHER */}
                     <Route path="/" element={<MainPage/>}/>
                     <Route path='/login' element={<LoginPage/>}/>
@@ -40,19 +38,14 @@ function App() {
                     <Route path="/test" element={<TestPage/>}/>
 
                     {/* JOB */}
-                    {/* TODO page */}
                     <Route path="/job/create/profile" element={<CreateJobPage/>}/>
                     <Route path="/job/create/job" element={<CreateJobPage/>}/>
-                    {/* TODO page */}
                     <Route path="/job/profile" element={<ProfilePage/>}/>
-                    <Route path="/job/detail" element={<DetailJobPage/>}/>
                     <Route path="/job/list" element={<ListJobPage/>}/>
+                    <Route path="/job/detail" element={<DetailJobPage/>}/>
 
                     {/* WORKER */}
-                    {/* TODO page */}
-                    <Route path="/worker/create/profile" element={<CreateWorkerResumePage/>}/>
                     <Route path="/worker/create/resume" element={<CreateWorkerResumePage/>}/>
-                    {/* TODO page */}
                     <Route path="/worker/detail" element={<DetailCheafProfilePage/>}/>
                     <Route path="/worker/profile" element={<ProfilePage/>}/>
                     <Route path="/worker/list" element={<ListWorkerPage/>}/>

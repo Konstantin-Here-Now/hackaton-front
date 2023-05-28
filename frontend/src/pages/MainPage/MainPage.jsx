@@ -10,10 +10,6 @@ import {
   Image
 } from 'react-bootstrap';
 
-import {SocialIcon} from 'react-social-icons';
-
-import {BsFillBusFrontFill} from "react-icons/bs";
-
 function MainPage() {
   return (
     <>
