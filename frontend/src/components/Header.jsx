@@ -22,14 +22,10 @@ function Header() {
     useEffect(() => {
             metaApi.getRole(token).then((data) => {
                 setRole(data?.Content?.name)
-                dispatch(setUser({user:data.Content.name}))
+                data?.Content?.name && dispatch(setUser({user:data.Content.name}))
             })
         },
         [token])
-
-
-
-    // const user = useSelector(state => state.todos.user);
 
     useEffect(() => {
         },

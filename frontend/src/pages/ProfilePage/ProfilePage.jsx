@@ -43,8 +43,6 @@ function ProfilePage(props) {
                             </Link>
                         </>
                     }
-
-
                 </form>
             </div>
         </section>
